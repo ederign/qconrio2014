@@ -17,20 +17,22 @@
 package org.uberfire.client.screens.miscfeatures;
 
 import javax.enterprise.event.Event;
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 
 import com.google.gwt.user.client.Window;
+import org.jboss.errai.common.client.api.Caller;
+import org.uberfire.shared.IClickServer;
 import org.uberfire.client.annotations.WorkbenchPartTitle;
 import org.uberfire.client.annotations.WorkbenchPartView;
 import org.uberfire.client.annotations.WorkbenchScreen;
 import org.uberfire.client.mvp.PlaceManager;
 import org.uberfire.client.mvp.UberView;
 import org.uberfire.client.workbench.events.ChangeTitleWidgetEvent;
-import org.uberfire.lifecycle.OnFocus;
-import org.uberfire.lifecycle.OnOpen;
 import org.uberfire.lifecycle.OnStartup;
 import org.uberfire.mvp.PlaceRequest;
-import org.uberfire.mvp.impl.DefaultPlaceRequest;
+import org.uberfire.security.Identity;
+import org.uberfire.shared.ClickEvent;
 
 /**
  * A stand-alone Presenter annotated to hook into the Workbench
@@ -38,13 +40,27 @@ import org.uberfire.mvp.impl.DefaultPlaceRequest;
 @WorkbenchScreen(identifier = "MiscellaneousFeatures")
 public class MiscFeaturesPresenter {
 
+    @Inject
+    private Caller<IClickServer> clickServer;
+
+    @Inject
+    private Identity identity;
+
+    public void fireClickEvent() {
+        clickServer.call().fireClick(identity.getName());
+    }
+
+    public void sampleCDI( @Observes ClickEvent event ) {
+        Window.alert( event.getUser() + "clicked" );
+    }
+
     public interface View
             extends
             UberView<MiscFeaturesPresenter> {
 
     }
 
-    private String title = "Miscellaneous features";
+    private String title = "QCon Demo";
 
     @Inject
     public View view;
@@ -72,19 +88,12 @@ public class MiscFeaturesPresenter {
         return view;
     }
 
-    @OnFocus
-    public void onFocus() {
-        Window.alert( "focus!" );
+    public void setNewTitle() {
+        String title = identity.getName() + " clicked";
+        ChangeTitleWidgetEvent changeTitleWidgetEvent1 = new ChangeTitleWidgetEvent( placeRequest, title, null );
+        changeTitleWidgetEvent.fire( changeTitleWidgetEvent1 );
     }
 
-    public void launchUnknownPlace() {
-        final PlaceRequest place = new DefaultPlaceRequest( "somewhere.that.does.not.exist" );
-        placeManager.goTo( place );
-    }
 
-    public void setNewTitle( final String newCoolTitle ) {
-        title = "Cool!";
-        changeTitleWidgetEvent.fire( new ChangeTitleWidgetEvent( placeRequest, title, null ) );
-    }
 
 }

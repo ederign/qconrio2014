@@ -92,44 +92,9 @@ public class MiscFeaturesView extends Composite
                             height );
     }
 
-    @UiHandler("notificationDefaultButton")
-    public void onClickNotificationButton( final ClickEvent event ) {
-        notification.fire( new NotificationEvent( "Something happened" ) );
-    }
-
-    @UiHandler("notificationErrorButton")
-    public void onClickNotificationErrButton( final ClickEvent event ) {
-        notification.fire( new NotificationEvent( "Something happened", ERROR ) );
-    }
-
-    @UiHandler("notificationSuccessButton")
-    public void onClickNotificationSuccessButton( final ClickEvent event ) {
-        notification.fire( new NotificationEvent( "Something happened", SUCCESS ) );
-    }
-
-    @UiHandler("notificationInfoButton")
-    public void onClickNotificationInfoButton( final ClickEvent event ) {
-        notification.fire( new NotificationEvent( "Something happened", INFO ) );
-    }
-
-    @UiHandler("notificationWarnButton")
-    public void onClickNotificationWarnButton( final ClickEvent event ) {
-        notification.fire( new NotificationEvent( "Something happened", WARNING ) );
-    }
-
-    @UiHandler("launchUnknownPlace")
-    public void onClickLaunchUnknownPlace( final ClickEvent event ) {
-        placeManager.goTo( new DefaultPlaceRequest( "MyTestPopUp" ) );
-    }
-
     @UiHandler("setNewTitleButton")
     public void onSetNewTitleButtonClick( final ClickEvent event ) {
-        presenter.setNewTitle( "NewCoolTitle" );
-    }
-
-    @UiHandler("activityNotFound")
-    public void onClickActivityNotFound( final ClickEvent event ) {
-        placeManager.goTo( "some.place.does.not.exists.please!" );
+        presenter.fireClickEvent(  );
     }
 
     @UiHandler("editor")
