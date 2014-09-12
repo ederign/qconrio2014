@@ -1,0 +1,5 @@
+org.uberfire.properties.editor.server.beans.UnknownTypesBean
+org.uberfire.properties.editor.server.BeanPropertyEditorBuilderTest
+org.uberfire.properties.editor.server.beans.SampleEnum
+org.uberfire.properties.editor.server.beans.ComplexPlanBean
+org.uberfire.properties.editor.server.beans.SamplePlanBean

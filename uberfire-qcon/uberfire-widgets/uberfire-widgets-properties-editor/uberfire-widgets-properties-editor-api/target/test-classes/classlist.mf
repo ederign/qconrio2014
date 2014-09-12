@@ -1,0 +1,2 @@
+org.uberfire.properties.editor.model.PropertyEditorEventTest
+org.uberfire.properties.editor.model.PropertyUtilsTest

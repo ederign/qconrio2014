@@ -1,0 +1,4 @@
+org.uberfire.metadata.io.KObjectUtil
+org.uberfire.metadata.io.IOServiceIndexedImpl
+org.uberfire.metadata.io.BatchIndex
+org.uberfire.metadata.io.IOSearchIndex

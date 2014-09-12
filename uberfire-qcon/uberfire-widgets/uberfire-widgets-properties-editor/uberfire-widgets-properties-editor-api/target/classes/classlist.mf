@@ -1,0 +1,10 @@
+org.uberfire.properties.editor.model.PropertyUtils
+org.uberfire.properties.editor.model.PropertyEditorType
+org.uberfire.properties.editor.service.BeanPropertyEditorBuilderService
+org.uberfire.properties.editor.model.PropertyEditorCategory
+org.uberfire.properties.editor.model.PropertyEditorFieldInfo
+org.uberfire.properties.editor.model.PropertyEditorChangeEvent
+org.uberfire.properties.editor.model.validators.LongValidator
+org.uberfire.properties.editor.model.validators.PropertyFieldValidator
+org.uberfire.properties.editor.model.PropertyEditorEvent
+org.uberfire.properties.editor.model.validators.TextValidator

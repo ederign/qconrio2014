@@ -1,0 +1,2 @@
+org.uberfire.metadata.io.IOServiceIndexedGitImplTest
+org.uberfire.metadata.io.BatchIndexTest
