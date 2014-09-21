@@ -22,7 +22,6 @@ import javax.inject.Inject;
 
 import com.google.gwt.user.client.Window;
 import org.jboss.errai.common.client.api.Caller;
-import org.uberfire.client.annotations.PrintMe;
 import org.uberfire.client.annotations.WorkbenchPartTitle;
 import org.uberfire.client.annotations.WorkbenchPartView;
 import org.uberfire.client.annotations.WorkbenchScreen;

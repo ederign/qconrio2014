@@ -43,5 +43,8 @@ public class HelloCalculator {
         System.out.println( "/: " + hl.process( 3, 4, ( num1,num2 ) -> num1 / num2 ) );
 
         //http://vitalflux.com/java-8-lambda-expressions-examples-using-calculator-implementation/
+
+        System.out.println(  Runtime.getRuntime().availableProcessors());
+
     }
 }

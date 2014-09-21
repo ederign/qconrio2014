@@ -16,7 +16,6 @@
 
 package org.uberfire.client.events;
 
-import org.uberfire.client.annotations.PrintMe;
 
 import static org.uberfire.commons.validation.PortablePreconditions.*;
 
